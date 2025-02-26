@@ -11,7 +11,13 @@ public class RouteValidator {
     public static final List<String> openApiEndpoints = List.of(
             "/api/auth/register",
             "/api/auth/login",
-            "/eureka"
+            "/eureka",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/v0/api-docs/**",
+            "/swagger-resources/**",
+            "/api-docs/**",
+            "/collection/**"
     );
 
     public Predicate<ServerHttpRequest> isOpenApiRequest = req -> openApiEndpoints.contains(req.getURI().getPath());
